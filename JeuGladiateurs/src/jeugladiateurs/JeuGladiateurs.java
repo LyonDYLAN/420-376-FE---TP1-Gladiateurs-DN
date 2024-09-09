@@ -27,6 +27,11 @@ public class JeuGladiateurs {
     Bob.afficherInfosPersonnage();
     Igor.afficherInfosPersonnage();
     affichage.afficherDebutCombat();
+    
+    
+    
+        
+    
     // </editor-fold>
 
     // **************************************************************************
