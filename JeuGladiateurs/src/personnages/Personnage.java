@@ -1,4 +1,5 @@
 package personnages;
+import java.util.Random;
 
 public class Personnage {
 
@@ -12,6 +13,7 @@ public class Personnage {
     int valeurMaxAttaque;
     int valeurDefense;
     int initiative;
+    
     // </editor-fold>
     
     // **************************************************************************
@@ -29,6 +31,11 @@ public class Personnage {
 
     public Personnage() {
         // TODO : Constructeur SANS paramètres qui initialise à ZÉRO ou à ""
+        this.nom = "";
+        valeurMaxAttaque = 0;
+        valeurDefense = 0;
+        pointsDeVie = 0;
+        initiative = 0;
     }
     // </editor-fold>
 
@@ -38,20 +45,80 @@ public class Personnage {
     // <editor-fold defaultstate="collapsed" desc="Getters et setters">
     // TODO : Les getters
     // TODO : Les setters
-    // </editor-fold>
+    
+        public String getNom() {
+        return nom;
+        // TODO : Afficher les infos du personnage, tel que montré dans l'énoncé
+    }
 
+    public int getPointsDeVie() {
+        return pointsDeVie;
+    }
+
+    public int getValeurMaxAttaque() {
+        return valeurMaxAttaque;
+    }
+
+    public int getValeurDefense() {
+        return valeurDefense;
+    }
+
+    
+    public int getInitiative() {
+        return initiative;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setPointsDeVie(int pointsDeVie) {
+        this.pointsDeVie = pointsDeVie;
+    }
+
+    public void setValeurMaxAttaque(int valeurMaxAttaque) {
+        this.valeurMaxAttaque = valeurMaxAttaque;
+    }
+
+    public void setValeurDefense(int valeurDefense) {
+        this.valeurDefense = valeurDefense;
+    }
+
+    public void setInitiative(int initiative) {
+        this.initiative = initiative;
+    }
+
+    
+    
+    
+    // </editor-fold>
     // **************************************************************************
     // **************************************************************************
     // **************************************************************************
     // <editor-fold defaultstate="collapsed" desc="Mécanique de jeu">
     public void afficherInfosPersonnage() {
         // TODO : Afficher les infos du personnage, tel que montré dans l'énoncé
+        String Statut;
+        
+        if (pointsDeVie <= 0) {
+            Statut = "Mort";
+        }
+        else{
+            Statut = "Vivant";
+        }
+        
+                System.out.println("\n " + nom + "\n Attaque : " + valeurMaxAttaque + "\nDéfense : " + valeurDefense + "\nPoints de vie : " + pointsDeVie + "\nInitiative : " + initiative + "\n Statut : " + Statut + "\n");
+
     }
 
     private int attaqueCalcul() {
         // TODO : Retourner la valeur de l'attaque du personnage.
         // Cette valeur est trouvée aléatoirement et doit se situer entre ZÉRO et valeurMaxAttaque.
-        return 0;
+        Random rand= new Random();
+        int nombreAleatoire = rand.nextInt((valeurMaxAttaque + 1 ) - 0) + 0;
+        
+        
+        return nombreAleatoire;
     }
 
     public void frapperPersonnage(Personnage personnageCible) {
