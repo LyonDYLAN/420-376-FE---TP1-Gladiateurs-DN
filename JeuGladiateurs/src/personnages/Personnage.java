@@ -8,11 +8,11 @@ public class Personnage {
     // **************************************************************************
     // <editor-fold defaultstate="collapsed" desc="Attributs">
     // TODO : Mettre vos attributs ici
-    String nom;
-    int pointsDeVie;
-    int valeurMaxAttaque;
-    int valeurDefense;
-    int initiative;
+    public String nom;
+    public int pointsDeVie;
+    public int valeurMaxAttaque;
+    public int valeurDefense;
+    public int initiative;
     
     // </editor-fold>
     

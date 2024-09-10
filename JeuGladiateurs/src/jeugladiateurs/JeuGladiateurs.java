@@ -24,14 +24,43 @@ public class JeuGladiateurs {
     // <editor-fold defaultstate="collapsed" desc="Affichage pré-combat">
     // TODO : Afficher les infos de chaque personnage
     // TODO : Afficher le message du début du combat
+    affichage.afficherSeparateurInfosPerso();
     Bob.setNewInitiativeRandom();
     Bob.afficherInfosPersonnage();
     Igor.setNewInitiativeRandom();
     Igor.afficherInfosPersonnage();
+     affichage.afficherSeparateurDeTour();
     affichage.afficherDebutCombat();
-    affichage.afficherSeparateurInfosPerso();
-    affichage.afficherSeparateurDeTour();
     
+        
+   
+        do {
+            
+            tour.afficheTour();
+            
+            for (int i = 0; i < 100; i++) {
+            if (Bob.initiative == i) {
+                Bob.frapperPersonnage(Igor);
+            }
+            if (Igor.initiative == i) {
+                Igor.frapperPersonnage(Bob);
+            }
+        }
+            
+            affichage.afficherSeparateurInfosPerso();
+            
+            Bob.afficherInfosPersonnage();
+            Igor.afficherInfosPersonnage();
+            Bob.setNewInitiativeRandom();
+            Igor.setNewInitiativeRandom();
+            tour.augmenteTour();
+            
+            affichage.afficherSeparateurDeTour();
+            
+            
+        } while (Bob.pointsDeVie != 0 && Igor.pointsDeVie !=0);
+    
+        affichage.afficheVictoire(Bob, Igor);
     
     
     // </editor-fold>
