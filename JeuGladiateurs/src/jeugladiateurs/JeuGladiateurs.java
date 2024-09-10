@@ -24,13 +24,15 @@ public class JeuGladiateurs {
     // <editor-fold defaultstate="collapsed" desc="Affichage pré-combat">
     // TODO : Afficher les infos de chaque personnage
     // TODO : Afficher le message du début du combat
+    Bob.setNewInitiativeRandom();
     Bob.afficherInfosPersonnage();
+    Igor.setNewInitiativeRandom();
     Igor.afficherInfosPersonnage();
     affichage.afficherDebutCombat();
+    affichage.afficherSeparateurInfosPerso();
+    affichage.afficherSeparateurDeTour();
     
     
-    
-        
     
     // </editor-fold>
 
