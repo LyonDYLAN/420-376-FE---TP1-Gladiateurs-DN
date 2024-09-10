@@ -3,6 +3,7 @@ package jeugladiateurs;
 import personnages.Personnage;
 import combat.CompteurDeTour;
 import combat.AffichageEcran;
+import personnages.Mirmillon;
 
 public class JeuGladiateurs {
 
@@ -14,7 +15,7 @@ public class JeuGladiateurs {
     // <editor-fold defaultstate="expanded" desc="Instanciation des objets">
     CompteurDeTour tour = new CompteurDeTour();
     AffichageEcran affichage = new AffichageEcran();
-    Personnage Bob = new Personnage("Bob le malchanceux", 15, 15, 70, 15);
+    Mirmillon Bob = new Mirmillon("Bob le malchanceux", 15, 15, 70, 15);
     Personnage Igor = new Personnage("Igor l'empaleur", 25, 5, 100, 30);
     // </editor-fold>
 
@@ -25,8 +26,8 @@ public class JeuGladiateurs {
     // TODO : Afficher les infos de chaque personnage
     // TODO : Afficher le message du début du combat
     affichage.afficherSeparateurInfosPerso();
-    Bob.setNewInitiativeRandom();
-    Bob.afficherInfosPersonnage();
+    Bob.setNewInitiativeRandomMirmillon();
+    Bob.InfosPersonnageMirnillon();
     Igor.setNewInitiativeRandom();
     Igor.afficherInfosPersonnage();
      affichage.afficherSeparateurDeTour();
@@ -40,7 +41,7 @@ public class JeuGladiateurs {
             
             for (int i = 0; i < 100; i++) {
             if (Bob.initiative == i) {
-                Bob.frapperPersonnage(Igor);
+                Bob.frapperPersonnageMirmillon(Igor);
             }
             if (Igor.initiative == i) {
                 Igor.frapperPersonnage(Bob);
@@ -49,9 +50,9 @@ public class JeuGladiateurs {
             
             affichage.afficherSeparateurInfosPerso();
             
-            Bob.afficherInfosPersonnage();
+            Bob.InfosPersonnageMirnillon();
             Igor.afficherInfosPersonnage();
-            Bob.setNewInitiativeRandom();
+            Bob.setNewInitiativeRandomMirmillon();
             Igor.setNewInitiativeRandom();
             tour.augmenteTour();
             
