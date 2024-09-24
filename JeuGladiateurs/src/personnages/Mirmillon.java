@@ -78,15 +78,7 @@ public class Mirmillon extends Personnage {
         System.out.println("\nClasse : " + classe);
     }
 
-    private int attaqueCalcul() {
-        // TODO : Retourner la valeur de l'attaque du personnage.
-        // Cette valeur est trouvée aléatoirement et doit se situer entre ZÉRO et valeurMaxAttaque.
-        Random rand= new Random();
-        int nombreAleatoire = rand.nextInt((valeurMaxAttaque + 1 ) - 0) + 0;
-        
-        
-        return nombreAleatoire;
-    }
+    
 
     public void frapperPersonnageMirmillon(Personnage personnageCible) {
         frapperPersonnage(personnageCible);

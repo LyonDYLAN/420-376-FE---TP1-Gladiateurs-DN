@@ -14,6 +14,9 @@ public class Personnage {
     public int valeurDefense;
     public int initiative;
     
+    
+    Random rand= new Random();
+
     // </editor-fold>
     
     // **************************************************************************
@@ -114,7 +117,6 @@ public class Personnage {
     private int attaqueCalcul() {
         // TODO : Retourner la valeur de l'attaque du personnage.
         // Cette valeur est trouvée aléatoirement et doit se situer entre ZÉRO et valeurMaxAttaque.
-        Random rand= new Random();
         int nombreAleatoire = rand.nextInt((valeurMaxAttaque + 1 ) - 0) + 0;
         
         
